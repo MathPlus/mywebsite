@@ -1,0 +1,46 @@
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="Author" content="Gilles Gnacadja">
+        <style>a { text-decoration : none ; color : purple ; }</style>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">const direction = "from_PPV_NPV_to_TPR_TNR" ;</script>
+    </head>
+
+    <body>
+
+        <h1><span id="span_title"></span></h1>
+        
+        <hr/>
+        
+        <div id="div_chart" style="width: 100%; height: 500px;"></div>
+        
+        <div id="div_sliders" style="width: 100%;">
+                <table align="center">
+                    <tr><td height="15px"></td></tr>
+                    <tr>
+                        <td align="center"><input id="input_slider1" type="range" min="0" max="100"/></td>
+                        <td width="20px">
+                        <td align="center"><input id="input_slider2" type="range" min="0" max="100"/></td>
+                    </tr>
+                    <tr>
+                        <td align="center"><span id="value_slider1"></span></td>
+                        <td width="20px">
+                        <td align="center"><span id="value_slider2"></span></td>
+                    </tr>
+                </table>
+        </div>
+        
+        <script type="text/javascript" src="predictive-vs-retrodictive-charts.js"></script>
+        
+        <hr/>
+        <h4>
+        <a href="https://math.gillesgnacadja.info/" target="_blank" rel="noopener noreferrer">Gilles Gnacadja</a> :
+        <a href="predictive-vs-retrodictive.html" target="_blank" rel="noopener noreferrer">Metrics of Binary Classifier Performance: Predictive vs. Retrodictive</a></h4>
+        </h4>
+        <hr/>
+
+    </body>
+    
+</html>

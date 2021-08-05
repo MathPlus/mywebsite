@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<meta name="Author" content="Gilles Gnacadja">
+    <style>a { text-decoration : none ; color : purple ; }</style>
 	<title>Metrics of Binary Classifier Performance: Predictive vs. Retrodictive</title>
 	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -20,8 +21,29 @@
 
 
 <p>
-I point out that the $\TPR$, the $\FNR$, the $\TNR$ and the $\FPR$, which are commonly used metrics to gauge the performance of binary classifiers, are retrodictive. I then contrast them with their predictive counterparts and name these according to a coherent, self-explanatory scheme. I also provide equations to convert from one set of rates to the other, and interactive visuals that enable exploring this interdependence: <a href="from-retrodictive-to-predictive.html" target="_blank" rel="noopener noreferrer">from retrodictive to predictive</a> and <a href="from-predictive-to-retrodictive.html" target="_blank" rel="noopener noreferrer">from predictive to retrodictive</a>.
+I point out that the $\TPR$, the $\FNR$, the $\TNR$ and the $\FPR$, which are commonly used metrics to gauge the performance of binary classifiers, are retrodictive. I then contrast them with their predictive counterparts and name these according to a coherent, self-explanatory scheme. I also provide equations to convert from one set of rates to the other, and interactive visuals that enable exploring this interdependence.
 </p>
+
+<h2>Interactive Visuals</h2>
+
+Without further ado, here are links to interactive visuals. Even though I knew that seemingly good retrodictive metrics can conceal unimpressive predictive metrics, I was surprised at some of what I saw, to the point that I still fear that mistakes might be lurking within my calculations.
+<ul>
+<li>
+From retrodictive to predictive
+<ul>
+<li><a href="from-TPR-FPR-to-pTPR-pFNR.html" target="_blank" rel="noopener noreferrer">From $\TPR$ and $\FPR$ to $\pTPR$ and $\pFNR$</a></li>
+<li><a href="from-TPR-TNR-to-PPV-NPV.html" target="_blank" rel="noopener noreferrer">From $\TPR$ and $\TNR$ to $\PPV$ and $\NPV$</a></li>
+</ul>
+</li>
+<li>
+From predictive to retrodictive
+<ul>
+<li><a href="from-pTPR-pFNR-to-TPR-FPR.html" target="_blank" rel="noopener noreferrer">From $\pTPR$ and $\pFNR$ to $\TPR$ and $\FPR$</a></li>
+<li><a href="from-PPV-NPV-to-TPR-TNR.html" target="_blank" rel="noopener noreferrer">From $\PPV$ and $\NPV$ to $\TPR$ and $\TNR$</a></li>
+</ul>
+</li>
+</ul>
+For definitions and calculations, please carry on perusing.
 
 <h2>Retrodictive Metrics of Binary Classifier Performance</h2>
 
@@ -89,6 +111,10 @@ Using common notations of probability theory, the following holds.
 \TNR &= p(\bar{A}|\bar{B}) \\
 \FPR &= p(A|\bar{B})
 \end{align*}
+The following complement equations hold.
+\begin{equation*}
+\TPR + \FNR = 1 \qquad \TNR + \FPR = 1
+\end{equation*}
 
 <h2>Predictive Metrics of Binary Classifier Performance</h2>
 
@@ -132,27 +158,31 @@ I think of these probabilities as <em>predictive</em>: predictions are given, an
 </tr>
 </table>
 <br/>
+The following complement equations hold.
+\begin{equation*}
+\pTPR + \pFPR = 1 \qquad \pTNR + \pFNR = 1
+\end{equation*}
 These predictive rates <a href="https://en.wikipedia.org/wiki/Confusion_matrix" target="_blank" rel="noopener noreferrer">already have names</a>:
 <table>
 <tr>
 <td>$\pTPR$</td><td>:</td>
-<td>Positive Predictive Value (PPV); Precision</td>
+<td>Positive Predictive Value ($\PPV$); Precision</td>
 </tr>
 <tr>
 <td>$\pFPR$</td><td>:</td>
-<td>False Discovery Rate (FDR)</td>
+<td>False Discovery Rate ($\FDR$)</td>
 </tr>
 <tr>
 <td>$\pTNR$</td><td>:</td>
-<td>Negative Predictive Value (NPV)</td>
+<td>Negative Predictive Value ($\NPV$)</td>
 </tr>
 <tr>
 <td>$\pFNR$</td><td>:</td>
-<td>False Omission Rate (FOR)</td>
+<td>False Omission Rate ($\FOR$)</td>
 </tr>
 </table>
 <br/>
-The naming scheme herein is I think more coherent and self-explanatory.
+The naming scheme herein is I think more coherent and self-explanatory. The $\PPV$-$\NPV$ naming scheme is adequate but incomplete.
 
 <h2>Notations</h2>
 
@@ -180,10 +210,6 @@ f(t,r) = \dfrac{ 1 }{ 1 + t r } \qquad g(t,u,v) = \dfrac{ 1 }{ 1 + t v/u } = f(t
 \pTNR &= \dfrac{ 1 }{ 1 + \dfrac{1}{\beta} \times \dfrac{\FNR}{\TNR} } = g( 1/\beta , \TNR , \FNR )
 \end{align}
 
-<p align="center">
-<a href="from-retrodictive-to-predictive.html" target="_blank" rel="noopener noreferrer">Access to interactive visual</a>
-</p>
-
 <h2>From Predictive to Retrodictive</h2>
 
 \begin{align}
@@ -197,27 +223,23 @@ f(t,r) = \dfrac{ 1 }{ 1 + t r } \qquad g(t,u,v) = \dfrac{ 1 }{ 1 + t v/u } = f(t
 \FNR &= \dfrac{ 1 }{ 1 + \dfrac{1}{\alpha} \times \dfrac{\pTPR}{\pFNR} } = g( 1/\alpha , \pFNR , \pTPR )
 \end{align}
 
-<p align="center">
-<a href="from-predictive-to-retrodictive.html" target="_blank" rel="noopener noreferrer">Access to interactive visual</a>
-</p>
-
-<h2>Consolidating the Conversion Equations</h2>
+<h2>Consolidating Conversion Equations: $\TPR$ and $\FPR$ vs. $\pTPR$ and $\pFNR$</h2>
 
 Let $h = (h_{1},h_{2})$ be the function given as follows.
 \begin{equation*}
 h_{1} = g \qquad\qquad h_{2}(t,u,v) = g(t,1-u,1-v)
 \end{equation*}
-Equations \eqref{eq:pTPR} and \eqref{eq:pFNR} consolidate into equation \eqref{eq:Retrodictive-to-Predictive}.<br/>
-Equations \eqref{eq:TPR} and \eqref{eq:FPR} consolidate into equation \eqref{eq:Predictive-to-Retrodictive}.
+Equations \eqref{eq:pTPR} and \eqref{eq:pFNR} consolidate into equation \eqref{eq:TPR-FPR-to-pTPR-pFNR}.<br/>
+Equations \eqref{eq:TPR} and \eqref{eq:FPR} consolidate into equation \eqref{eq:pTPR-pFNR-to-TPR-FPR}.
 
 \begin{align}
-\label{eq:Retrodictive-to-Predictive}
+\label{eq:TPR-FPR-to-pTPR-pFNR}
 ( \pTPR , \pFNR ) &= h( \beta , \TPR , \FPR ) \\[2mm]
-\label{eq:Predictive-to-Retrodictive}
+\label{eq:pTPR-pFNR-to-TPR-FPR}
 ( \TPR , \FPR ) &= h( \alpha , \pTPR , \pFNR )
 \end{align}
 
-Equations \eqref{eq:Retrodictive-to-Predictive} and \eqref{eq:Predictive-to-Retrodictive} further consolidate into the following diagram.
+Equations \eqref{eq:TPR-FPR-to-pTPR-pFNR} and \eqref{eq:pTPR-pFNR-to-TPR-FPR} further consolidate into the following diagram.
 <p align="center">
 <script type="text/tikz">
 \begin{tikzpicture}
@@ -225,6 +247,34 @@ Equations \eqref{eq:Retrodictive-to-Predictive} and \eqref{eq:Predictive-to-Retr
 \node at (5, 0) (node2) {$(\mathtt{pTPR},\mathtt{pFNR})$} ;
 \draw[->] (node1) edge[bend left] node (node3) [above]{$h(\beta,.,.)$}  (node2) ;
 \draw[->] (node2) edge[bend left] node (node4) [below]{$h(\alpha,.,.)$} (node1) ;
+\end{tikzpicture}
+</script>
+</p>
+
+<h2>Consolidating Conversion Equations: $\TPR$ and $\TNR$ vs. $\PPV$ and $\NPV$</h2>
+
+Let $k = (k_{1},k_{2})$ be the function given as follows.
+\begin{equation*}
+k_{1}(t,u,v) = g(t,u,1-v) \qquad\qquad k_{2}(t,u,v) = g(1/t,v,1-u)
+\end{equation*}
+Equations \eqref{eq:pTPR} and \eqref{eq:pTNR} consolidate into equation \eqref{eq:TPR-TNR-to-PPV-NPV}.<br/>
+Equations \eqref{eq:TPR} and \eqref{eq:TNR} consolidate into equation \eqref{eq:PPV-NPV-to-TPR-TNR}.
+
+\begin{align}
+\label{eq:TPR-TNR-to-PPV-NPV}
+( \PPV , \NPV ) &= k( \beta , \TPR , \TNR ) \\[2mm]
+\label{eq:PPV-NPV-to-TPR-TNR}
+( \TPR , \TNR ) &= k( \alpha , \PPV , \NPV )
+\end{align}
+
+Equations \eqref{eq:TPR-TNR-to-PPV-NPV} and \eqref{eq:PPV-NPV-to-TPR-TNR} further consolidate into the following diagram.
+<p align="center">
+<script type="text/tikz">
+\begin{tikzpicture}
+\node at (0, 0) (node1) {$(\mathtt{TPR},\mathtt{TNR})$} ;
+\node at (5, 0) (node2) {$(\mathtt{PPV},\mathtt{NPV})$} ;
+\draw[->] (node1) edge[bend left] node (node3) [above]{$k(\beta,.,.)$}  (node2) ;
+\draw[->] (node2) edge[bend left] node (node4) [below]{$k(\alpha,.,.)$} (node1) ;
 \end{tikzpicture}
 </script>
 </p>

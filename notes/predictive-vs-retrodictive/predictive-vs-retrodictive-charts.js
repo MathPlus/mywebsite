@@ -2,75 +2,54 @@ google.charts.load( 'current' ,  { 'packages' : [ 'corechart' ] } ) ;
 google.charts.setOnLoadCallback(chartLoadCallback) ;
 
 
-function g( t , u , v )
+function g( s , u , v )
 {
     let y = [] ;
-    for ( let i = 0 ; i < t.length ; i++ )
+    for ( let i = 0 ; i < s.length ; i++ )
     {
-        y[i] = u / ( u + t[i] * v ) ;
+        y[i] = u / ( u + s[i] * v ) ;
     }
     return y ;
 }
 
 
-function h1( t , y1 , y2 )
+function h1( y1 , y2 )
 {
     return g( t , y1 , y2 ) ;
 }
 
 
-function h2( t , y1 , y2 )
+function h2( y1 , y2 )
 {
     return g( t , 1 - y1 , 1 - y2 ) ;
+}
+
+
+function k1( y1 , y2 )
+{
+    return g( t , y1 , 1 - y2 ) ;
+}
+
+
+function k2( y1 , y2 )
+{
+    return g( t_inv , y2 , 1 - y1 ) ;
 }
 
 
 function get_x_and_t(n)
 {
     let x_and_t = {} ;
-    x_and_t.x = [] ;
-    x_and_t.t = [] ;
+    x_and_t.x     = [] ;
+    x_and_t.t     = [] ;
+    x_and_t.t_inv = [] ;
     for ( let i = 0 ; i <= n ; i++ )
     {
-        x_and_t.x[i] = i / n ;
-        x_and_t.t[i] = ( n - i ) / i ;
+        x_and_t.x[i]     = i / n ;
+        x_and_t.t[i]     = ( n - i ) / i ;
+        x_and_t.t_inv[i] = i / ( n - i ) ;
     }
     return x_and_t ;
-}
-
-
-function test_h( n , y1 , y2 , idArea1 , idArea2 )
-{
-    const x_and_t = get_x_and_t(n) ;
-    const x = x_and_t.x ;
-    const t = x_and_t.t ;
-    const z1 = h1( t , y1 , y2 ) ;
-    const z2 = h2( t , y1 , y2 ) ;
-    
-    document.getElementById(idArea1).innerHTML
-        = "n = " + n + "<br/>y1 = " + y1 + "<br/>y2 = " + y2 ;
-     
-    let col1_spec    = {} ;
-    col1_spec.header = "x" ;
-    col1_spec.data   = x ;
-    
-    let col2_spec    = {} ;
-    col2_spec.header = "t" ;
-    col2_spec.data   = t ;
-    
-    let col3_spec    = {} ;
-    col3_spec.header = "z1" ;
-    col3_spec.data   = z1 ;
-    
-    let col4_spec    = {} ;
-    col4_spec.header = "z2" ;
-    col4_spec.data   = z2 ;
-    
-    col_spec = [ col1_spec , col2_spec , col3_spec , col4_spec ] ;
-    
-    table = make_table_A(col_spec) ;
-    
-    document.getElementById(idArea2).appendChild(table) ;
 }
 
 
@@ -147,11 +126,11 @@ function init_chartOptions()
 }
 
 
-function setup_retrodictive_to_predictive(chartOptions_in)
+function setup_from_TPR_FPR_to_pTPR_pFNR(chartOptions_in)
 {
     let chartOptions_out = chartOptions_in ;
     
-    chartOptions_out.title = 'Metrics of binary classifier performance: from Retrodictive to Predictive' ;
+    chartOptions_out.title = 'from (retrodictive) TPR and FPR to (predictive) pTPR and pFNR' ;
     chartOptions_out.hAxis.title = 'Proportion of observed positive class' ;
     
     chartOptions_out.my_options.dataColHdr[0] = 'ObsvPosCl' ;
@@ -165,11 +144,11 @@ function setup_retrodictive_to_predictive(chartOptions_in)
 }
 
 
-function setup_predictive_to_retrodictive(chartOptions_in)
+function setup_from_pTPR_pFNR_to_TPR_FPR(chartOptions_in)
 {
     let chartOptions_out = chartOptions_in ;
     
-    chartOptions_out.title = 'Metrics of binary classifier performance: from Predictive to Retrodictive' ;
+    chartOptions_out.title = 'from (predictive) pTPR and pFNR to (retrodictive) TPR and FPR' ;
     chartOptions_out.hAxis.title = 'Proportion of predicted positive class' ;
     
     chartOptions_out.my_options.dataColHdr[0] = 'PredPosCl' ;
@@ -178,6 +157,42 @@ function setup_predictive_to_retrodictive(chartOptions_in)
     
     chartOptions_init.my_options.sliderHdr[0] = 'pTPR' ;
     chartOptions_init.my_options.sliderHdr[1] = 'pFNR' ;
+    
+    return chartOptions_out ;
+}
+
+
+function setup_from_TPR_TNR_to_PPV_NPV(chartOptions_in)
+{
+    let chartOptions_out = chartOptions_in ;
+    
+    chartOptions_out.title = 'from (retrodictive) TPR and TNR to (predictive) PPV and NPV' ;
+    chartOptions_out.hAxis.title = 'Proportion of observed positive class' ;
+    
+    chartOptions_out.my_options.dataColHdr[0] = 'ObsvPosCl' ;
+    chartOptions_out.my_options.dataColHdr[1] = 'PPV' ;
+    chartOptions_out.my_options.dataColHdr[2] = 'NPV' ;
+    
+    chartOptions_init.my_options.sliderHdr[0] = 'TPR' ;
+    chartOptions_init.my_options.sliderHdr[1] = 'TNR' ;
+    
+    return chartOptions_out ;
+}
+
+
+function setup_from_PPV_NPV_to_TPR_TNR(chartOptions_in)
+{
+    let chartOptions_out = chartOptions_in ;
+    
+    chartOptions_out.title = 'from (predictive) PPV and NPV to (retrodictive) TPR and TNR' ;
+    chartOptions_out.hAxis.title = 'Proportion of predicted positive class' ;
+    
+    chartOptions_out.my_options.dataColHdr[0] = 'PredPosCl' ;
+    chartOptions_out.my_options.dataColHdr[1] = 'TPR' ;
+    chartOptions_out.my_options.dataColHdr[2] = 'TNR' ;
+    
+    chartOptions_init.my_options.sliderHdr[0] = 'PPV' ;
+    chartOptions_init.my_options.sliderHdr[1] = 'NPV' ;
     
     return chartOptions_out ;
 }
@@ -247,8 +262,8 @@ function slider_oninput( slider_header , slider_value , slider_value_display_are
         y2 = slider_value / 100 ;
     }
     
-    z1 = h1( t , y1 , y2 ) ;
-    z2 = h2( t , y1 , y2 ) ;
+    z1 = fctn_z1( y1 , y2 ) ;
+    z2 = fctn_z2( y1 , y2 ) ;
     
     drawChart() ;
 }
@@ -256,38 +271,65 @@ function slider_oninput( slider_header , slider_value , slider_value_display_are
  
 const n = 100 ;
 const x_and_t = get_x_and_t(n) ;
-const x = x_and_t.x ;
-const t = x_and_t.t ;
+const x     = x_and_t.x ;
+const t     = x_and_t.t ;
+const t_inv = x_and_t.t_inv ;
 
-const Y1 = 80 ;
-const Y2 = 10 ;
+let Y1 = null ;
+let Y2 = null ;
 
-let y1 = Y1 / 100 ;
-let y2 = Y2 / 100 ;
-
-let z1 = h1( t , y1 , y2 ) ;
-let z2 = h2( t , y1 , y2 ) ;
+let fctn_z1 = null ;
+let fctn_z2 = null ;
 
 const chartOptions_init = init_chartOptions() ;
-let chartOptions = {} ;
+let chartOptions = null ;
 
 switch (direction)
 {
-    case "retrodictive_to_predictive" :
-        chartOptions = setup_retrodictive_to_predictive(chartOptions_init) ;
+    case "from_TPR_FPR_to_pTPR_pFNR" :
+        chartOptions = setup_from_TPR_FPR_to_pTPR_pFNR(chartOptions_init) ;
+        Y1 = 80 ;
+        Y2 = 10 ;
+        fctn_z1 = h1 ;
+        fctn_z2 = h2 ;
         break ;
-    case "predictive_to_retrodictive" :
-        chartOptions = setup_predictive_to_retrodictive(chartOptions_init) ;
+    case "from_pTPR_pFNR_to_TPR_FPR" :
+        chartOptions = setup_from_pTPR_pFNR_to_TPR_FPR(chartOptions_init) ;
+        Y1 = 80 ;
+        Y2 = 10 ;
+        fctn_z1 = h1 ;
+        fctn_z2 = h2 ;
+        break ;
+    case "from_TPR_TNR_to_PPV_NPV" :
+        chartOptions = setup_from_TPR_TNR_to_PPV_NPV(chartOptions_init) ;
+        Y1 = 80 ;
+        Y2 = 90 ;
+        fctn_z1 = k1 ;
+        fctn_z2 = k2 ;
+        break ;
+    case "from_PPV_NPV_to_TPR_TNR" :
+        chartOptions = setup_from_PPV_NPV_to_TPR_TNR(chartOptions_init) ;
+        Y1 = 80 ;
+        Y2 = 90 ;
+        fctn_z1 = k1 ;
+        fctn_z2 = k2 ;
         break ;
     default :
         alert("Unrecognized direction [" + direction + "]") ;
 }
 
+let y1 = Y1 / 100 ;
+let y2 = Y2 / 100 ;
+
+let z1 = fctn_z1( y1 , y2 ) ;
+let z2 = fctn_z2( y1 , y2 ) ;
+
 document.title = chartOptions.title ;
 
 let chartData = init_chartData() ;
 
-document.getElementById("span_title").textContent = chartOptions.title ;
+document.getElementById("span_title").setAttribute( "style", "white-space: pre;" ) ;
+document.getElementById("span_title").textContent = "Metrics of binary classifier performance:\n" + chartOptions.title ;
 document.getElementById("input_slider1").value = Y1 ;
 document.getElementById("input_slider2").value = Y2 ;
 
