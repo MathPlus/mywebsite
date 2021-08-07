@@ -184,7 +184,7 @@ These predictive rates <a href="https://en.wikipedia.org/wiki/Confusion_matrix" 
 <br/>
 The naming scheme herein is I think more coherent and self-explanatory. The $\PPV$-$\NPV$ naming scheme is adequate but incomplete.
 
-<h2>Notations</h2>
+<h2>Setting up for Equations</h2>
 
 The following notations will make it convenient to write down equations for conversion between the two sets of rates; and help reveal a pattern among the equations.
 <br/><br/>
@@ -197,7 +197,7 @@ I denote $f$ and $g$ the bivariate and trivariate functions defined as follows.
 f(t,r) = \dfrac{ 1 }{ 1 + t r } \qquad g(t,u,v) = \dfrac{ 1 }{ 1 + t v/u } = f(t,v/u)
 \end{equation*}
 
-<h2>From Retrodictive to Predictive</h2>
+<h2>Equations: From Retrodictive to Predictive</h2>
 
 \begin{align}
 \label{eq:pTPR}
@@ -210,7 +210,7 @@ f(t,r) = \dfrac{ 1 }{ 1 + t r } \qquad g(t,u,v) = \dfrac{ 1 }{ 1 + t v/u } = f(t
 \pTNR &= \dfrac{ 1 }{ 1 + \dfrac{1}{\beta} \times \dfrac{\FNR}{\TNR} } = g( 1/\beta , \TNR , \FNR )
 \end{align}
 
-<h2>From Predictive to Retrodictive</h2>
+<h2>Equations: From Predictive to Retrodictive</h2>
 
 \begin{align}
 \label{eq:TPR}
@@ -279,7 +279,11 @@ Equations \eqref{eq:TPR-TNR-to-PPV-NPV} and \eqref{eq:PPV-NPV-to-TPR-TNR} furthe
 </script>
 </p>
 
-<h2>Additional Interesting Equations</h2>
+<h2>Epilogue</h2>
+
+A binary classifier is typically realized by thresholding a regression-learned continuous function that produces a prediction score: an object is predicted to belong to the positive class if its prediction score is greater than the threshold. Under these circumstances, an $\TPR$-$\FPR$ (receiver operator characteristic, or ROC) curve can be produced by varying the threshold over the range of eligible values. It is worth noting that the $\TPR$-$\FPR$ ROC curve and the commonly derived area under the curve (AUC ROC) are attributes of the regressor, not of any particular thresholding-derived classifier. In particular, the area under the $\TPR$-$\FPR$ curve is the proportion of pairs of objects whose prediction scores are ordered in the same direction that the observations are. I am thinking that there also might be a similarly or more informative parameterized curve of predictive rates. If successful, this reflection should at least mean the obsoleting of debates on which of the $\TPR$-$\FPR$ and the precision-recall curves is more pertinent depending of class balance. Something I might write about next, time permitting.
+
+<h2>Appendix: Additional Interesting Equations</h2>
 
 Equations \eqref{eq:ratios1} and \eqref{eq:ratios2} can be obtained from equations \eqref{eq:pTPR} and \eqref{eq:pFNR}, respectively.<br/>
 Equations \eqref{eq:ratios3} and \eqref{eq:ratios4} can be obtained from equations \eqref{eq:TPR} and \eqref{eq:FPR}, respectively.
@@ -295,7 +299,7 @@ Equations \eqref{eq:ratios3} and \eqref{eq:ratios4} can be obtained from equatio
 \alpha \times \dfrac{\pTNR}{\pFPR} &= \dfrac{\TNR}{\FPR}
 \end{align}
 
-<h2>Proofs of Equations</h2>
+<h2>Appendix: Proofs of Equations</h2>
 
 The following is an identity equation.
 \begin{equation}
@@ -345,10 +349,6 @@ Equations \eqref{eq:pTPR}-\eqref{eq:pTNR} and \eqref{eq:TPR}-\eqref{eq:FNR} are 
 \dfrac{ 1 }{ 1 + \dfrac{1}{\alpha} \times \dfrac{\pTPR}{\pFNR} }
 \end{array}
 \end{equation*}
-
-<h2>Epilogue</h2>
-
-A binary classifier is typically realized by thresholding a continuous function that produces a prediction score: an object is predicted to belong to the positive class if its prediction score is greater than the threshold. Under these circumstances, an $\FPR$-$\TPR$ curve can be produced by varying the threshold over the range of eligible values; and likewise, a $\pFNR$-$\pTPR$ curve. It is known that the area under the $\FPR$-$\TPR$ curve is the proportion of pairs of objects whose prediction scores are ordered in the same direction that the observations are. I expect that, similarly, the area under the $\pFNR$-$\pTPR$ curve is the proportion of pairs of objects whose observations are ordered in the same direction that the prediction scores are. There are debates on which of the $\FPR$-$\TPR$ curve and the precision-recall curve provide the most pertinent area under the curve (AUC) depending on the observed positive/negative class balance. I think that the $\pFNR$-$\pTPR$ curve should make those questions obsolete. Something I might write about next, time permitting.
 
 </body>
 
