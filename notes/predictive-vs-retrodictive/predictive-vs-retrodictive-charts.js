@@ -235,7 +235,7 @@ function drawChart()
 }
 
 
-function get_slider_label( slider_header , slider_value , slider_value_display_area )
+function get_slider_label( slider_header , slider_value )
 {
     const slider_label = "<b>" + slider_header + " = " + slider_value + "\%</b>" ;
     return slider_label ;
@@ -250,7 +250,7 @@ function slider_oninput( slider_header , slider_value , slider_value_display_are
         return ;
     }
     
-    slider_label = get_slider_label( slider_header , slider_value , slider_value_display_area ) ;
+    slider_label = get_slider_label( slider_header , slider_value ) ;
     slider_value_display_area.innerHTML = slider_label ;
     
     if ( which_slider == 1 )
@@ -340,10 +340,10 @@ document.getElementById("input_slider2").value = Y2 ;
 
 let input_slider1 = document.getElementById("input_slider1") ;
 let value_slider1 = document.getElementById("value_slider1") ;
-value_slider1.innerHTML = get_slider_label( chartOptions.my_options.sliderHdr[0] , input_slider1.value , value_slider1 ) ;
+value_slider1.innerHTML = get_slider_label( chartOptions.my_options.sliderHdr[0] , input_slider1.value ) ;
 input_slider1.oninput = function() { slider_oninput( chartOptions.my_options.sliderHdr[0] , input_slider1.value , value_slider1 , 1 ) ; } ;
 
 let input_slider2 = document.getElementById("input_slider2") ;
 let value_slider2 = document.getElementById("value_slider2") ;
-value_slider2.innerHTML = get_slider_label( chartOptions.my_options.sliderHdr[1] , input_slider2.value , value_slider2 ) ;
+value_slider2.innerHTML = get_slider_label( chartOptions.my_options.sliderHdr[1] , input_slider2.value ) ;
 input_slider2.oninput = function() { slider_oninput( chartOptions.my_options.sliderHdr[1] , input_slider2.value , value_slider2 , 2 ) ; } ;
