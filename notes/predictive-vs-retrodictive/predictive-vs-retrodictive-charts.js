@@ -255,11 +255,11 @@ function slider_oninput( slider_header , slider_value , slider_value_display_are
     
     if ( which_slider == 1 )
     {
-        y1 = slider_value / n_y ;
+        y1 = slider_value / max_Y ;
     }
     if ( which_slider == 2 )
     {
-        y2 = slider_value / n_y ;
+        y2 = slider_value / max_Y ;
     }
     
     z1 = fctn_z1( y1 , y2 ) ;
@@ -270,13 +270,14 @@ function slider_oninput( slider_header , slider_value , slider_value_display_are
 
 
 const n_x = 1000 ;
-const n_y = 100 ;
-const r_y = n_y / 100 ;
 
 const x_and_t = get_x_and_t(n_x) ;
 const x     = x_and_t.x ;
 const t     = x_and_t.t ;
 const t_inv = x_and_t.t_inv ;
+
+const max_Y = 100 ;
+const step_Y = 0.1 ;
 
 let Y1 = null ;
 let Y2 = null ;
@@ -321,8 +322,8 @@ switch (direction)
         alert("Unrecognized direction [" + direction + "]") ;
 }
 
-let y1 = Y1 / n_y ;
-let y2 = Y2 / n_y ;
+let y1 = Y1 / max_Y ;
+let y2 = Y2 / max_Y ;
 
 let z1 = fctn_z1( y1 , y2 ) ;
 let z2 = fctn_z2( y1 , y2 ) ;
@@ -333,8 +334,10 @@ let chartData = init_chartData() ;
 
 document.getElementById("span_title").setAttribute( "style", "white-space: pre;" ) ;
 document.getElementById("span_title").textContent = "Metrics of binary classifier performance:\n" + chartOptions.title ;
-document.getElementById("input_slider1").max = n_y ;
-document.getElementById("input_slider2").max = n_y ;
+document.getElementById("input_slider1").max = max_Y ;
+document.getElementById("input_slider2").max = max_Y ;
+document.getElementById("input_slider1").step = step_Y ;
+document.getElementById("input_slider2").step = step_Y ;
 document.getElementById("input_slider1").value = Y1 ;
 document.getElementById("input_slider2").value = Y2 ;
 
