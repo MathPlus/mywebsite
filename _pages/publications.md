@@ -14,6 +14,61 @@ author_profile: true
     <tr>
         <td colspan="2">
             <cite>
+                Metrics of Binary Classifier Performance: Predictive vs. Retrodictive
+            </cite>
+        </td>
+    </tr>
+    <tr>
+        <td><tt>Research note</tt></td>
+        <td>
+            <a class="aa" target="GGnSndWndw" href="/notes/predictive-vs-retrodictive/predictive-vs-retrodictive.html">
+            predictive-vs-retrodictive.html</a>
+        </td>
+    </tr>
+    <tr>
+        <td><tt>Interactive</tt></td>
+        <td>
+            <a class="aa" target="GGnSndWndw" href="/notes/predictive-vs-retrodictive/from-TPR-FPR-to-pTPR-pFNR.html">
+            From retrodictive TPR and FPR to predictive pTPR and pFNR</a><br/>
+            <a class="aa" target="GGnSndWndw" href="/notes/predictive-vs-retrodictive/from-TPR-TNR-to-PPV-NPV.html">
+            From retrodictive TPR and TNR to predictive PPV and NPV</a><br/>
+            <a class="aa" target="GGnSndWndw" href="/notes/predictive-vs-retrodictive/from-pTPR-pFNR-to-TPR-FPR.html">
+            From predictive pTPR and pFNR to retrodictive TPR and FPR</a><br/>
+            <a class="aa" target="GGnSndWndw" href="/notes/predictive-vs-retrodictive/from-PPV-NPV-to-TPR-TNR.html">
+            From predictive PPV and NPV to retrodictive TPR and TNR</a>
+        </td>
+    </tr>
+    <tr>
+        <td><tt>Announcement</tt></td>
+        <td>
+            <a class="aa" target="GGnSndWndw" href="https://www.linkedin.com/pulse/metrics-binary-classifier-performance-predictive-vs-gilles-gnacadja/">
+            LinkedIn article</a>
+        </td>
+    </tr>
+
+    <tr><td colspan="2"><hr/></td></tr>
+    
+    <tr>
+        <td colspan="2">
+            <cite>
+                Profiling the Risk for Cardiovascular Adverse Events in Patients with Relapsed/Refractory Multiple Myeloma Treated with Carfilzomib Using Topological Analysis
+            </cite>
+        </td>
+    </tr>
+    <tr>
+        <td><tt>Conference</tt></td>
+        <td>
+            International Society for Pharmacoeconomics and Outcomes Research<br/>
+            <a class="aa" target="GGnSndWndw" href="https://www.ispor.org/conferences-education/conferences/upcoming-conferences/ispor-europe-2021">
+            Emerging Frontiers and Opportunities: Special Populations and Technologies</a>, 2021
+        </td>
+    </tr>
+
+    <tr><td colspan="2"><hr/></td></tr>
+    
+    <tr>
+        <td colspan="2">
+            <cite>
                 An Invitation to Pharmacostatics
             </cite>
         </td>
@@ -57,7 +112,7 @@ author_profile: true
         </td>
     </tr>
     <tr>
-        <td><tt>Preprint</tt></td>
+        <td><tt>Research note</tt></td>
         <td>
             <a class="aa" target="GGnSndWndw" href="/files/EnclosureAlgoFPOR.html">
             EnclosureAlgoFPOR.pdf</a>
