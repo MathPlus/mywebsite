@@ -21,6 +21,8 @@ author_profile: true
     <tr>
         <td><tt>Research note</tt></td>
         <td>
+            <a class="aa" target="GGnSndWndw" href="/files/Predictive-vs-Retrodictive.html">
+            Predictive-vs-Retrodictive.pdf</a><br/>
             <a class="aa" target="GGnSndWndw" href="/notes/predictive-vs-retrodictive/predictive-vs-retrodictive.html">
             predictive-vs-retrodictive.html</a>
         </td>
