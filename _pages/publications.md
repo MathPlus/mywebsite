@@ -14,6 +14,29 @@ author_profile: true
     <tr>
         <td colspan="2">
             <cite>
+                Information of Absence Is Not Absence of Information: Can We Not Impute?
+            </cite>
+        </td>
+    </tr>
+    <tr>
+        <td><tt>Research note</tt></td>
+        <td>
+            <a class="aa" target="GGnSndWndw" href="/files/Can-We-Not-Impute.html">
+            Can-We-Not-Impute.pdf</a>
+        </td>
+    </tr>
+    <tr>
+        <td><tt>Announcement</tt></td>
+        <td>
+            LinkedIn article pending
+        </td>
+    </tr>
+
+    <tr><td colspan="2"><hr/></td></tr>
+    
+    <tr>
+        <td colspan="2">
+            <cite>
                 Metrics of Binary Classifier Performance: Predictive vs. Retrodictive
             </cite>
         </td>
