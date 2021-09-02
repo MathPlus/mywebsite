@@ -28,7 +28,8 @@ author_profile: true
     <tr>
         <td><tt>Announcement</tt></td>
         <td>
-            LinkedIn article pending
+            <a class="aa" target="GGnSndWndw" href="https://www.linkedin.com/pulse/information-absence-can-we-impute-gilles-gnacadja">
+            LinkedIn article</a>
         </td>
     </tr>
 
