@@ -14,6 +14,44 @@ author_profile: true
     <tr>
         <td colspan="2">
             <cite>
+                Profiling the Risk for Cardiovascular Adverse Events in Patients with Relapsed/Refractory Multiple Myeloma Treated with Carfilzomib Using Topological Analysis
+            </cite>
+        </td>
+    </tr>
+    <tr>
+        <td><tt>Authorship</tt></td>
+        <td>
+            Second-to-last of nine Amgen and academic authors<br/>
+            Lead tech architect and implementer
+        </td>
+    </tr>
+    <tr>
+        <td><tt>Abstract</tt></td>
+        <td>
+            <a class="aa" target="GGnSndWndw" href="https://www.ispor.org/heor-resources/presentations-database/presentation/euro2021-3408/113478">
+            Abstract</a>
+        </td>
+    </tr>
+    <tr>
+        <td><tt>Conference</tt></td>
+        <td>
+            International Society for Pharmacoeconomics and Outcomes Research<br/>
+            <a class="aa" target="GGnSndWndw" href="https://www.ispor.org/conferences-education/conferences/upcoming-conferences/ispor-europe-2021">
+            Emerging Frontiers and Opportunities: Special Populations and Technologies</a>, 2021
+        </td>
+    </tr>
+    <tr>
+        <td><tt>Journal</tt></td>
+        <td>
+            <a class="aa" target="GGnSndWndw" href= "https://www.valueinhealthjournal.com/">Value in Health</a>, Volume 24, Issue 12, S2, December 2021
+        </td>
+    </tr>
+
+    <tr><td colspan="2"><hr/></td></tr>
+    
+    <tr>
+        <td colspan="2">
+            <cite>
                 Information of Absence Is Not Absence of Information: Can We Not Impute?
             </cite>
         </td>
@@ -69,24 +107,6 @@ author_profile: true
         <td>
             <a class="aa" target="GGnSndWndw" href="https://www.linkedin.com/pulse/metrics-binary-classifier-performance-predictive-vs-gilles-gnacadja/">
             LinkedIn article</a>
-        </td>
-    </tr>
-
-    <tr><td colspan="2"><hr/></td></tr>
-    
-    <tr>
-        <td colspan="2">
-            <cite>
-                Profiling the Risk for Cardiovascular Adverse Events in Patients with Relapsed/Refractory Multiple Myeloma Treated with Carfilzomib Using Topological Analysis
-            </cite>
-        </td>
-    </tr>
-    <tr>
-        <td><tt>Conference</tt></td>
-        <td>
-            International Society for Pharmacoeconomics and Outcomes Research<br/>
-            <a class="aa" target="GGnSndWndw" href="https://www.ispor.org/conferences-education/conferences/upcoming-conferences/ispor-europe-2021">
-            Emerging Frontiers and Opportunities: Special Populations and Technologies</a>, 2021
         </td>
     </tr>
 
