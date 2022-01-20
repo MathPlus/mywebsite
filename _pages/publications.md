@@ -9,6 +9,7 @@ author_profile: true
 
 <table>
 
+    <!--
     <tr><td colspan="2"><hr/></td></tr>
     
     <tr>
@@ -46,6 +47,7 @@ author_profile: true
             <a class="aa" target="GGnSndWndw" href= "https://www.valueinhealthjournal.com/">Value in Health</a>, Volume 24, Issue 12, S2, December 2021
         </td>
     </tr>
+    -->
 
     <tr><td colspan="2"><hr/></td></tr>
     
