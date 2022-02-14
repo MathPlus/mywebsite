@@ -54,6 +54,30 @@ author_profile: true
     <tr>
         <td colspan="2">
             <cite>
+                I read The Book of Why
+            </cite>
+        </td>
+    </tr>
+    <tr>
+        <td><tt>Research note</tt></td>
+        <td>
+            <a class="aa" target="GGnSndWndw" href="/files/I-read-The-Book-of-Why.html">
+            I-read-The-Book-of-Why.pdf</a>
+        </td>
+    </tr>
+    <tr>
+        <td><tt>Announcement</tt></td>
+        <td>
+            <a class="aa" target="GGnSndWndw" href="https://www.linkedin.com/pulse/i-read-book-why-gilles-gnacadja">
+            LinkedIn article</a>
+        </td>
+    </tr>
+
+    <tr><td colspan="2"><hr/></td></tr>
+    
+    <tr>
+        <td colspan="2">
+            <cite>
                 Information of Absence Is Not Absence of Information: Can We Not Impute?
             </cite>
         </td>
