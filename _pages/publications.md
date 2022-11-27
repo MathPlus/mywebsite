@@ -9,45 +9,34 @@ author_profile: true
 
 <table>
 
-    <!--
     <tr><td colspan="2"><hr/></td></tr>
     
     <tr>
         <td colspan="2">
             <cite>
-                Profiling the Risk for Cardiovascular Adverse Events in Patients with Relapsed/Refractory Multiple Myeloma Treated with Carfilzomib Using Topological Analysis
+                Using Data Science to Characterize Patterns in Cardiovascular Clinical Data: Topological Analysis of Baseline Characteristics in Patients With Relapsed/Refractory Multiple Myeloma Enrolled in Carfilzomib Trials
             </cite>
         </td>
     </tr>
     <tr>
         <td><tt>Authorship</tt></td>
         <td>
-            Second-to-last of nine Amgen and academic authors<br/>
-            Lead tech architect and implementer
-        </td>
-    </tr>
-    <tr>
-        <td><tt>Abstract</tt></td>
-        <td>
-            <a class="aa" target="GGnSndWndw" href="https://www.ispor.org/heor-resources/presentations-database/presentation/euro2021-3408/113478">
-            Abstract</a>
-        </td>
-    </tr>
-    <tr>
-        <td><tt>Conference</tt></td>
-        <td>
-            International Society for Pharmacoeconomics and Outcomes Research<br/>
-            <a class="aa" target="GGnSndWndw" href="https://www.ispor.org/conferences-education/conferences/upcoming-conferences/ispor-europe-2021">
-            Emerging Frontiers and Opportunities: Special Populations and Technologies</a>, 2021
+            Second-to-last of eight authors as lead architect and implementer; last and first four authors are academic MDs; remaining two authors are Amgen MDs.
         </td>
     </tr>
     <tr>
         <td><tt>Journal</tt></td>
         <td>
-            <a class="aa" target="GGnSndWndw" href= "https://www.valueinhealthjournal.com/">Value in Health</a>, Volume 24, Issue 12, S2, December 2021
+            <a class="aa" target="GGnSndWndw" href= "https://www.clinical-lymphoma-myeloma-leukemia.com/">Clinical Lymphoma, Myeloma & Leukemia</a>, Volume 22, Supplement 2, S407-S408, October 2022
         </td>
     </tr>
-    -->
+    <tr>
+        <td><tt>DOI</tt></td>
+        <td>
+        <a class="aa" target="GGnSndWndw" href="https://dx.doi.org/10.1016/S2152-2650(22)01593-2">
+        10.1016/S2152-2650(22)01593-2</a>
+        </td>
+    </tr>
 
     <tr><td colspan="2"><hr/></td></tr>
     
