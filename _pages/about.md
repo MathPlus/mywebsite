@@ -10,7 +10,7 @@ redirect_from:
 
 <link rel="stylesheet" href="/assets/css/my-style.css"/>
 
-<h2>
+<h2 style="color:Red;">
 This website is badly in need of rejuvenation of its content and user experience. My <a class="aa" target="GGnSndWndw" href="https://www.linkedin.com/in/appliedmath/">LinkedIn profile</a> is more up to date.
 </h2>
 
